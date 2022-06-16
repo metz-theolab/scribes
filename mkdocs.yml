@@ -1,0 +1,10 @@
+site_name: SCRIBES documentation
+nav:
+    - Home: index.md
+    - The project: project.md
+    - Deployment: deployment.md
+    - Database documentation: database.md
+    - API documentation: api.md
+    - CI/CD: ci_cd.md
+    - About us: about.md
+theme: readthedocs

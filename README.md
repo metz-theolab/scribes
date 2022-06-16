@@ -1,2 +1,5 @@
-# scribes
-Code for the Smart Critical Edition of Ben Sira (SCRIBE) project
+# SCRIBES :books:boom:
+
+Welcome to the Smart Critical Edition of Ben Sira (SCRIBE) project !
+
+
