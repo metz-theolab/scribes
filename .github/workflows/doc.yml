@@ -1,0 +1,33 @@
+name: Documentation
+
+on: push
+
+jobs:
+  lint:
+    name: Build the documentation
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+
+    steps:
+      # Checks out a copy of your repository on the ubuntu-latest machine
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Select correct version of Python
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # Install mkdocs package
+      - name: Install poetry using pip
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install mkdocs
+
+      # Build documentation using mkdocs
+      - name: Build the documentation using mkdocs
+        run: |
+          mkdocs build

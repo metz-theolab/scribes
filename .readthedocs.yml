@@ -1,0 +1,13 @@
+# Required
+version: 2
+
+# Build documentation with MkDocs
+mkdocs:
+  configuration: mkdocs.yml
+build:
+  image: stable
+
+python:
+  version: 3.8
+  install:
+    - requirements: docs/requirements.txt
