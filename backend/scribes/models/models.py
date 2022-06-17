@@ -9,6 +9,9 @@ class Manuscript(BaseModel):
     """
     id_: str = Field(..., "The ID of the manuscript.")
     text_id: str = Field(..., "The ID of the text represented by the manuscript.")
+    year: int = Field(None, "Datation of the manuscript.")
+    width: int = Field(None, "Width of the manuscript.")
+    height: int = Field(None, "Height of the manuscript.")
     comment: str = Field(..., "A generic comment field for this manuscript.")
 
 
