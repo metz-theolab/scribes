@@ -2,6 +2,7 @@ site_name: SCRIBES documentation
 nav:
     - Home: index.md
     - The project: project.md
+    - User guide: user_guide.md 
     - Deployment: deployment.md
     - Database documentation: database.md
     - API documentation: api.md
