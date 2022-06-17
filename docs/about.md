@@ -3,7 +3,7 @@
 ## About the project
 
 
-The SCRIBES project is funded by the 2022 Biblissima call and developed at the department of theology of the 
+The SCRIBES project is funded by the 2022 Biblissima call and developed at the department of theology of the University of Lorraine.
 
 
 ## About us
