@@ -110,12 +110,22 @@ class Reading(BaseModel):
     """
     id_: str = Field(..., "The ID of the word.")
     word: str = Field(..., "The content of the word.")
+    #preceding_word: str = Field(..., "Pointe vers l'id_ du mot word précédent")
     manuscript_id: str = Field(..., "the manuscript where the word is from")
     folio_id: str = Field(..., "")
     column_id: str = Field(..., "")
     line_id: str = Field(..., "")
     chapter_id: str = Field(..., "The ID of the chapter of the collation.")
     verse_id: str = Field(..., "The ID of the verse of the collation.")
+
+class MarginalNote(BaseModel):
+    """The marginal note."""
+    id_: str = Field(..., "The ID of the marginal note.")
+    manuscript_id: str = Field(..., "The ID of the manuscript with the marginal note.")
+    content: str = Field(..., "The content of the marginal note.")
+    verse: str = Field(..., "The ID of the verse next to the marginal note.")
+
+
 
 class Morphology(BaseModel):
     """The morphology of a word.
@@ -152,9 +162,4 @@ class Images(BaseModel):
     respectivement chapitre et verset et que l'on puisse trier, etc. voire même qui interprète correctement des encodages du type "2:2-4;3,4-5"
     """
 
-class MarginalNote(BaseModel):
-    """The marginal note."""
-    id_: str = Field(..., "The ID of the marginal note.")
-    manuscript_id: str = Field(..., "The ID of the manuscript with the marginal note.")
-    content: str = Field(..., "The content of the marginal note.")
-    verse: str = Field(..., "The ID of the verse next to the marginal note.")
+
