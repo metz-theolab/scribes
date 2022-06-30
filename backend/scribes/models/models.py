@@ -78,7 +78,9 @@ class Column(BaseModel):
 class Line(BaseModel):
     id_: str = Field(..., "The ID of the line.")
     nbr: int = Field(..., "The number of the line")
-    column_id: str = Field(..., "the ID of the folio the line is from.")
+    column_id: str = Field(..., "The ID of the folio the line is from.")
+    word_start_id: str = Field(..., "The ID of the word that starts the line")
+    word_stop_id: str = Field(..., "The ID of the word that ends the line")
 
 
 class Chapter(BaseModel):
@@ -96,13 +98,10 @@ class Verse(BaseModel):
     nbr: int = Field(..., "The number of the verse in a chapter.")
     chapter_id: str = Field(..., "The ID of the chapter the verse is from.")
 
-
-class Collation(BaseModel):
-    """Represents a Verse collation.
-    """
-    id_: str = Field(..., "The ID of the collation.")
-    word_id: str = Field(..., "The word collated")
-
+class SyntaxicUnit(BaseModel):
+    """Represents a syntaxic unity"""
+    id_: str = Field(..., "The ID of the sentence")
+    word_id: str = Field(..., "The id of the words of the sentence")
     #Pour collation et reading je ne sais pas trop comment tu vois les choses
 
 class Reading(BaseModel):
