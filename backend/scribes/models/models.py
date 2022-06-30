@@ -161,4 +161,18 @@ class Images(BaseModel):
     respectivement chapitre et verset et que l'on puisse trier, etc. voire même qui interprète correctement des encodages du type "2:2-4;3,4-5"
     """
 
+class NotesOnReading(BaseModel):
+    """The notes on reading in markdown
+    """
+    id_: str = Field(..., "The ID of the note on reading")
+    word_id: str = Field(..., "The ID of the word or group of words the note on reading is related to")
+    note: str = Field(..., "The note on the reading")
+
+class NotesOnTranslation(BaseModel):
+    """The notes on translation in markdown
+    """
+    id_: str = Field(..., "The ID of the note on translation")
+    word_id: str = Field(..., "The ID of the word or group of words the note on translation is related to")
+    note: str = Field(..., "The note on the translation")
+
 
