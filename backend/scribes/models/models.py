@@ -112,9 +112,9 @@ class Reading(BaseModel):
     word: str = Field(..., "The content of the word.")
     #preceding_word: str = Field(..., "Pointe vers l'id_ du mot word précédent")
     manuscript_id: str = Field(..., "the manuscript where the word is from")
-    folio_id: str = Field(..., "")
-    column_id: str = Field(..., "")
-    line_id: str = Field(..., "")
+    folio_id: str = Field(..., "the folio where the word is from")
+    column_id: str = Field(..., "the column where the word is from")
+    line_id: str = Field(..., "the line where the word is from")
     chapter_id: str = Field(..., "The ID of the chapter of the collation.")
     verse_id: str = Field(..., "The ID of the verse of the collation.")
 
