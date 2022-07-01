@@ -130,3 +130,5 @@ dmypy.json
 
 # Do not commit credentials
 *git-credentials
+
+*.DS_Store
