@@ -1,22 +1,20 @@
 <template>
   <b-container id="app">
     <b-row>
-      <b-col class="text-center"> Gospel of John - Chapter 1 </b-col>
+      <b-col class="text-center"> Gospel of John</b-col>
     </b-row>
     <b-row>
-      <ManuscriptSelector
-        v-for="manuscript in availableManuscripts"
-        :key="manuscript"
-        :ManuscriptID="manuscript"
-      >
+      <ManuscriptSelector :manuscriptLists="availableManuscripts">
       </ManuscriptSelector>
+    </b-row>
+    <b-row>
+      <b-col class="text-center"> Chapter 1 </b-col>
     </b-row>
     <b-row>
       <b-col w="6">
         <b-button :pressed.sync="synopticSelected" variant="danger">
           Synoptic
         </b-button>
-
         <SynopticChoices></SynopticChoices>
       </b-col>
 
@@ -30,6 +28,8 @@
       </b-col>
     </b-row>
     <b-row class="justify-content-md-center">
+      <SynopticViewer v-if="synopticSelected" :collation="collation">
+      </SynopticViewer>
       <CollationViewer
         v-if="collatedSelected & !collapsed"
         :collation="collation"
@@ -47,6 +47,7 @@ import ManuscriptSelector from "./components/ManuscriptSelector.vue";
 import SynopticChoices from "./components/SynopticChoices.vue";
 import CollationViewer from "./components/CollationViewer.vue";
 import CollapsedCollationViewer from "./components/CollapsedCollationViewer.vue";
+import SynopticViewer from "./components/SynopticViewer.vue";
 
 export default {
   name: "App",
@@ -55,6 +56,7 @@ export default {
     SynopticChoices,
     CollationViewer,
     CollapsedCollationViewer,
+    SynopticViewer,
   },
   data: function () {
     return {

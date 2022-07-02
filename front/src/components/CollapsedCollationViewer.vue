@@ -4,8 +4,8 @@
       <span v-if="Object.keys(variants).length != 0">
         <span v-for="(variant, value) in variants" :key="variant">
           <b-button
-            variant="outline"
-            v-b-tooltip.hover
+            variant="outline-danger"
+            v-b-popover.hover.top
             :title="value + ': ' + variant"
           >
             {{ content }}

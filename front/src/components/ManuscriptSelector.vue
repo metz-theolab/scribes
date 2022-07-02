@@ -1,14 +1,27 @@
 <template>
-  <b-col w="1">
-    <b-button pill variant="info">{{ ManuscriptID }}</b-button>
-  </b-col>
+  <b-row>
+    <b-col w="1">
+      <b-button
+        variant="outline-primary"
+        v-for="manuscript in manuscriptLists"
+        label="manuscript"
+        :key="manuscript"
+        >{{ manuscript }}</b-button
+      >
+    </b-col>
+  </b-row>
 </template>
 
 <script>
 export default {
   name: "ManuscriptSelector",
   props: {
-    ManuscriptID: String,
+    manuscriptLists: Array,
   },
+  //   data() {
+  //     return {
+  //       manuscriptLists: ["Shanghai", "Beijing", "Guangzhou", "Shenzhen"],
+  //     };
+  //   },
 };
 </script>
