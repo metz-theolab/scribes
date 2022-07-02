@@ -130,3 +130,6 @@ dmypy.json
 
 # Do not commit credentials
 *git-credentials
+
+# Do not commit node module
+**/node_modules/*
