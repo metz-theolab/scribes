@@ -25,6 +25,7 @@
         <b-checkbox v-if="collatedSelected" v-model="collapsed"
           >Collapsed</b-checkbox
         >
+        Reference: MS1
       </b-col>
     </b-row>
     <b-row class="justify-content-md-center">
